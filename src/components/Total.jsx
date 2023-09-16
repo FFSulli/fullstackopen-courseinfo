@@ -1,11 +1,12 @@
-const Total = () => {
+const Total = (props) => {
 
-    const exercises1 = 10
-    const exercises2 = 7
-    const exercises3 = 14
+    const getExercisesSum = (parts) => {
+        let exercises = parts.map(item => item.exercises)
+        return exercises.reduce((a, b) => a + b, 0)
+    }
 
     return (
-        <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+        <p>Number of exercises {getExercisesSum(props.parts)}</p>
     )
 }
 
